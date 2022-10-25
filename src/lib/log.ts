@@ -20,7 +20,7 @@ export const warnCrossOrgin = (
   apiType: 'get' | 'set' | 'remove' | 'clear',
   apiName: string,
   env: WebWorkerEnvironment
-) => console.warn(`Partytown unable to ${apiType} cross-origin ${apiName}: ` + env.$location$);
+) => console.warn(`Hyperspeed Worker unable to ${apiType} cross-origin ${apiName}: ` + env.$location$);
 
 export const logMain = (msg: string) => {
   if (debug) {

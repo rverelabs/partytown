@@ -249,4 +249,4 @@ export const resolveUrl = (env: WebWorkerEnvironment, url: string, type: Resolve
   resolveToUrl(env, url, type) + '';
 
 export const getPartytownScript = () =>
-  `<script src="${partytownLibUrl('partytown.js?v=' + VERSION)}"></script>`;
+  `<script src="${partytownLibUrl('hyperspeed-worker.js?v=' + VERSION)}"></script>`;

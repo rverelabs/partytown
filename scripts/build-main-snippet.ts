@@ -5,7 +5,7 @@ import type { OutputOptions, Plugin, RollupOptions } from 'rollup';
 
 export function buildMainSnippet(opts: BuildOptions): RollupOptions {
   const partytownDebug: OutputOptions = {
-    file: join(opts.distLibDebugDir, 'partytown.js'),
+    file: join(opts.distLibDebugDir, 'hyperspeed-worker.js'),
     format: 'es',
     exports: 'none',
     plugins: [
@@ -26,7 +26,7 @@ export function buildMainSnippet(opts: BuildOptions): RollupOptions {
   };
 
   const partytownMin: OutputOptions = {
-    file: join(opts.distLibDir, 'partytown.js'),
+    file: join(opts.distLibDir, 'hyperspeed-worker.js'),
     format: 'es',
     exports: 'none',
     plugins: [

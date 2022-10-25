@@ -4,7 +4,7 @@ import { serializeForWorker } from './main-serialization';
 
 export const mainForwardTrigger = (worker: PartytownWebWorker, $winId$: WinId, win: MainWindow) => {
   let queuedForwardCalls = win._ptf;
-  let forwards = (win.partytown || {}).forward || [];
+  let forwards = (win.hyperspeedWorker || {}).forward || [];
   let i: number;
   let mainForwardFn: any;
 

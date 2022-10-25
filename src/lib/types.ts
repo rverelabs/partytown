@@ -491,7 +491,7 @@ export interface PartytownConfig {
    */
   logStackTraces?: boolean;
   /**
-   * Path to the service worker file. Defaults to `partytown-sw.js`.
+   * Path to the service worker file. Defaults to `hyperspeed-worker-sw.js`.
    */
   swPath?: string;
   /**
@@ -577,7 +577,7 @@ export interface ApplyHookOptions extends HookOptions {
 }
 
 export interface MainWindow extends Window {
-  partytown?: PartytownConfig;
+  hyperspeedWorker?: PartytownConfig;
   _ptf?: any[];
 }
 

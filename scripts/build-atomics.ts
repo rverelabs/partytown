@@ -26,7 +26,7 @@ function buildAtomicsDebug(opts: BuildOptions): RollupOptions {
   return {
     input: join(opts.tscLibDir, 'sandbox', 'index.js'),
     output: {
-      file: join(opts.distLibDebugDir, 'partytown-atomics.js'),
+      file: join(opts.distLibDebugDir, 'hyperspeed-worker-atomics.js'),
       format: 'es',
       exports: 'none',
       intro: `((window)=>{`,
@@ -48,7 +48,7 @@ function buildAtomicsMin(opts: BuildOptions): RollupOptions {
   return {
     input: join(opts.tscLibDir, 'sandbox', 'index.js'),
     output: {
-      file: join(opts.distLibDir, 'partytown-atomics.js'),
+      file: join(opts.distLibDir, 'hyperspeed-worker-atomics.js'),
       format: 'es',
       exports: 'none',
       intro: `((window)=>{`,

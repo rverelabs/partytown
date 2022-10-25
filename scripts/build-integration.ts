@@ -30,7 +30,7 @@ export function buildIntegration(opts: BuildOptions): RollupOptions {
         },
         async load(id) {
           if (id === '@snippet') {
-            const codeFileName = 'partytown.js';
+            const codeFileName = 'hyperspeed-worker.js';
 
             let codeFilePath: string;
             if (opts.isDev) {

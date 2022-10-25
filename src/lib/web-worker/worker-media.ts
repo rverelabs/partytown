@@ -29,7 +29,7 @@ export const getInitWindowMedia = () => {
 
     // sync load partytown-media, which will set self.ptm
     // to Window media constructors, like Audio and MediaSource
-    webWorkerCtx.$importScripts$(partytownLibUrl('partytown-media.js?v=' + VERSION));
+    webWorkerCtx.$importScripts$(partytownLibUrl('hyperspeed-worker-media.js?v=' + VERSION));
 
     // keep reference to the loaded media constructors, like MediaSource
     webWorkerCtx.$initWindowMedia$ = self.$bridgeFromMedia$;

@@ -18,7 +18,7 @@ const { writeFile } = fsExtra;
 
 export function buildServiceWorker(opts: BuildOptions): RollupOptions {
   const swDebug: OutputOptions = {
-    file: join(opts.distLibDebugDir, 'partytown-sw.js'),
+    file: join(opts.distLibDebugDir, 'hyperspeed-worker-sw.js'),
     format: 'es',
     exports: 'none',
     plugins: [...minifyPlugin(opts, true), versionPlugin(opts)],
@@ -27,7 +27,7 @@ export function buildServiceWorker(opts: BuildOptions): RollupOptions {
   const output: OutputOptions[] = [swDebug];
   if (!opts.isDev) {
     output.push({
-      file: join(opts.distLibDir, 'partytown-sw.js'),
+      file: join(opts.distLibDir, 'hyperspeed-worker-sw.js'),
       format: 'es',
       exports: 'none',
       plugins: [...minifyPlugin(opts, false), fileSize()],
@@ -69,9 +69,9 @@ async function buildSandboxServiceWorker(opts: BuildOptions, msgType: MessageTyp
 
   let sandboxHtml: string;
   if (debug) {
-    const outName = `partytown-sandbox-${msgType}.js`;
+    const outName = `hyperspeed-worker-sandbox-${msgType}.js`;
     await writeFile(join(opts.distLibDebugDir, outName), sandboxJsCode);
-    sandboxHtml = `<!DOCTYPE html><html><head><meta charset="utf-8"><script src="./partytown-sandbox-${msgType}.js?v=${opts.packageJson.version}"></script></head></html>`;
+    sandboxHtml = `<!DOCTYPE html><html><head><meta charset="utf-8"><script src="./hyperspeed-worker-sandbox-${msgType}.js?v=${opts.packageJson.version}"></script></head></html>`;
   } else {
     sandboxHtml = `<!DOCTYPE html><html><head><meta charset="utf-8"><script type="module">${sandboxJsCode}</script></head></html>`;
   }

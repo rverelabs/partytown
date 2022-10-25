@@ -5,7 +5,7 @@ import { minifyPlugin } from './minify.js';
 
 export function buildMediaImplementation(opts: BuildOptions): RollupOptions {
   const debugOutput: OutputOptions = {
-    file: join(opts.distLibDebugDir, `partytown-media.js`),
+    file: join(opts.distLibDebugDir, `hyperspeed-worker-media.js`),
     format: 'es',
     exports: 'none',
     intro: `((self) => {`,
@@ -16,7 +16,7 @@ export function buildMediaImplementation(opts: BuildOptions): RollupOptions {
   const output: OutputOptions[] = [debugOutput];
   if (!opts.isDev) {
     output.push({
-      file: join(opts.distLibDir, `partytown-media.js`),
+      file: join(opts.distLibDir, `hyperspeed-worker-media.js`),
       format: 'es',
       exports: 'none',
       intro: `((self) => {`,

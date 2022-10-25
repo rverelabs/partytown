@@ -30,7 +30,7 @@ syncCreateMessenger(receiveMessage).then((onMessageHandler) => {
               type: 'text/javascript',
             })
           ),
-      { name: `Partytown 🎉` }
+      { name: `Hyperspeed Worker` }
     );
 
     worker.onmessage = (ev: MessageEvent<MessageFromWorkerToSandbox>) => {
@@ -45,7 +45,7 @@ syncCreateMessenger(receiveMessage).then((onMessageHandler) => {
     };
 
     if (debug) {
-      logMain(`Created Partytown web worker (${VERSION})`);
+      logMain(`Created Hyperspeed web worker (${VERSION})`);
       worker.onerror = (ev) => console.error(`Web Worker Error`, ev);
     }
 
