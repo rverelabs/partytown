@@ -74,7 +74,7 @@ export const randomId: RandomId = () =>
  *
  * @public
  */
-export const SCRIPT_TYPE = `text/partytown`;
+export const SCRIPT_TYPE = `text/hyperspeed-worker`;
 
 export const SCRIPT_TYPE_EXEC = `-x`;
 

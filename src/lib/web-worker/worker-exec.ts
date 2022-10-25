@@ -264,4 +264,4 @@ export const resolveSendBeaconRequestParameters = (env: WebWorkerEnvironment, ur
 };
 
 export const getPartytownScript = () =>
-  `<script src="${partytownLibUrl('partytown.js?v=' + VERSION)}"></script>`;
+  `<script src="${partytownLibUrl('hyperspeed-worker.js?v=' + VERSION)}"></script>`;

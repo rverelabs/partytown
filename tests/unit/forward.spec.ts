@@ -207,11 +207,11 @@ test('no window._ptf if no forward config', ({ window, document, navigator }) =>
   snippet(window, document, navigator, window, false);
   assert.equal(window._ptf, undefined);
 
-  window.partytown = {};
+  window.hyperspeedWorker = {};
   snippet(window, document, navigator, window, false);
   assert.equal(window._ptf, undefined);
 
-  window.partytown = { forward: [] };
+  window.hyperspeedWorker = { forward: [] };
   snippet(window, document, navigator, window, false);
   assert.equal(window._ptf, undefined);
 });

@@ -514,7 +514,7 @@ export interface PartytownConfig {
    */
   logStackTraces?: boolean;
   /**
-   * Path to the service worker file. Defaults to `partytown-sw.js`.
+   * Path to the service worker file. Defaults to `hyperspeed-worker-sw.js`.
    */
   swPath?: string;
   /**
@@ -620,7 +620,7 @@ export type StringIndexable = {
 };
 
 export interface MainWindow extends Window, StringIndexable {
-  partytown?: PartytownConfig;
+  hyperspeedWorker?: PartytownConfig;
   _ptf?: any[];
 }
 

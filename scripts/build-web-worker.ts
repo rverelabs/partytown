@@ -32,7 +32,7 @@ export async function buildWebWorker(opts: BuildOptions, msgType: MessageType, d
 
   const webWorkerCode = getJsBanner(opts, generated.output[0].code);
   if (debug) {
-    const outName = `partytown-ww-${msgType}.js`;
+    const outName = `hyperspeed-worker-ww-${msgType}.js`;
     await writeFile(join(opts.distLibDebugDir, outName), webWorkerCode);
   }
 
@@ -61,14 +61,14 @@ export function webWorkerBlobUrlPlugin(
         return `const WEB_WORKER_BLOB = ${code}; export default WEB_WORKER_BLOB;`;
       }
       if (id.endsWith('web-worker-url')) {
-        return `const WEB_WORKER_URL = "partytown-ww-${msgType}.js?v=${opts.packageJson.version}"; export default WEB_WORKER_URL;`;
+        return `const WEB_WORKER_URL = "hyperspeed-worker-ww-${msgType}.js?v=${opts.packageJson.version}"; export default WEB_WORKER_URL;`;
       }
       return null;
     },
     async generateBundle() {
       if (opts.isDev) {
         const wwCode = await buildWebWorker(opts, msgType, debug);
-        const wwDebugFilePath = join(opts.distLibDebugDir, `partytown-ww-${msgType}.js`);
+        const wwDebugFilePath = join(opts.distLibDebugDir, `hyperspeed-worker-ww-${msgType}.js`);
         await writeFile(wwDebugFilePath, wwCode);
       }
     },

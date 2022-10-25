@@ -26,15 +26,15 @@ export function snippet(
       isReady = 1;
       if (debug) {
         // default to use debug files
-        libPath = (config!.lib || '/~partytown/') + (config!.debug !== false ? 'debug/' : '');
+        libPath = (config!.lib || '/~hyperspeed-worker/') + (config!.debug !== false ? 'debug/' : '');
       } else {
         // default to use production, non-debug files
-        libPath = (config!.lib || '/~partytown/') + (config!.debug ? 'debug/' : '');
+        libPath = (config!.lib || '/~hyperspeed-worker/') + (config!.debug ? 'debug/' : '');
       }
 
       if (libPath[0] == '/') {
-        // grab all the partytown scripts
-        scripts = doc.querySelectorAll('script[type="text/partytown"]');
+        // grab all the hyperspeed-worker scripts
+        scripts = doc.querySelectorAll('script[type="text/hyperspeed-worker"]');
 
         if (top != win) {
           // this is an iframe
@@ -50,7 +50,7 @@ export function snippet(
           } else if (nav.serviceWorker) {
             // service worker support
             nav.serviceWorker
-              .register(libPath + (config!.swPath || 'partytown-sw.js'), {
+              .register(libPath + (config!.swPath || 'hyperspeed-worker-sw.js'), {
                 scope: libPath,
               })
               .then(function (swRegistration) {
@@ -89,7 +89,7 @@ export function snippet(
     }
     sandbox.src =
       libPath +
-      'partytown-' +
+      'hyperspeed-worker-' +
       (isAtomics ? 'atomics.js?v=_VERSION_' : 'sandbox-sw.html?' + Date.now());
 
     doc.querySelector(config!.sandboxParent || 'body')!.appendChild(sandbox);
@@ -135,7 +135,7 @@ export function snippet(
     clearTimeout(timeout);
   }
 
-  config = win.partytown || {};
+  config = win.hyperspeedWorker || {};
 
   if (top == win) {
     // this is the top window
