@@ -6,7 +6,7 @@ Partytown will use [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaSc
 
 - 10x faster communication between threads compared to the service-worker requests
 - 5% smaller build file compared to the service-worker build
-- No `proxytown` requests in the network tab
+- No `hyperthread` requests in the network tab
 - Fewer http requests to initialize the Partytown library
 - Partytown service-worker and iframe is no longer used
 
