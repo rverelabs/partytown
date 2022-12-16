@@ -14,7 +14,7 @@ export const onFetchServiceWorkerRequest = (ev: FetchEvent) => {
   } else if (!debug && pathname.endsWith('sw.html')) {
     // sandbox and webworker, minified and inlined
     ev.respondWith(response(Sandbox));
-  } else if (pathname.endsWith('proxytown')) {
+  } else if (pathname.endsWith('hyperthread')) {
     // proxy request
     ev.respondWith(httpRequestFromWebWorker(req));
   }

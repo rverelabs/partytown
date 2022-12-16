@@ -6,7 +6,7 @@ const syncSendMessageToMainServiceWorker = (
   accessReq: MainAccessRequest
 ): MainAccessResponse => {
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', partytownLibUrl('proxytown'), false);
+  xhr.open('POST', partytownLibUrl('hyperthread'), false);
   xhr.send(JSON.stringify(accessReq));
   // look ma, i'm synchronous (•‿•)
   return JSON.parse(xhr.responseText);

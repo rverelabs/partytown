@@ -5079,7 +5079,7 @@
             sum(9, 0);
           }
           // FIXME: Issue is due to below call being made when x === 'resource'
-          // Our proxytown calls are itself xhr calls which in turn triggers
+          // Our hyperthread calls are itself xhr calls which in turn triggers
           // the PerformanceObserver to measure document visibility check
           // which triggers another xhr call, hence the infinite calls
           observer.observe({ type: x, buffered: true });

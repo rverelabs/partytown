@@ -6,7 +6,7 @@ Nothing is without trade-offs. Using Partytown to orchestrate third-party script
 
 ## Intercepted Network Requests
 
-You'll notice in the network tab there may be hundreds of requests to `proxytown`. Even though these requests are listed in the network tab, each of these are intercepted by the service worker and handled by Partytown locally, and they are not external HTTP requests. Using these locally intercepted network requests is how the [service worker communication layer](/how-does-partytown-work#service-worker) is able to work.
+You'll notice in the network tab there may be hundreds of requests to `hyperthread`. Even though these requests are listed in the network tab, each of these are intercepted by the service worker and handled by Partytown locally, and they are not external HTTP requests. Using these locally intercepted network requests is how the [service worker communication layer](/how-does-partytown-work#service-worker) is able to work.
 
 These requests showing up are more of an annoyance than anything else, since they shouldn't be affecting performance or [Lighthouse scores](https://web.dev/performance-scoring/). Additionally, they can give you an insight into what certain third-party scripts are up to. See the [debugging documentation](/debugging) for more info.
 
