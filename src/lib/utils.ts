@@ -241,7 +241,7 @@ export function serializeConfig(config: PartytownConfig) {
               typeof scriptUrl === 'string' ? 'string' : 'regexp',
               typeof scriptUrl === 'string' ? scriptUrl : scriptUrl.source,
             ]
-      ) satisfies Required<PartytownInternalConfig>['loadScriptsOnMainThread'];
+      );
     }
     return value;
   });
