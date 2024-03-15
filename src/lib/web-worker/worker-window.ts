@@ -373,11 +373,19 @@ export const createWindow = (
                 return win[propName];
               }
             },
-            has: () =>
-              // window "has" any and all props, this is especially true for global variables
-              // that are meant to be assigned to window, but without "window." prefix,
-              // like: <script>globalProp = true</script>
-              true,
+            has: (win, propName: any) => {
+              // For numeric properties, check if the corresponding frame exists.
+              if (typeof propName === 'string' && !isNaN(propName as any)) {
+                return !!getChildEnvs()[propName as any];
+              } else {
+                // For other properties, check existence directly on the window.
+                return (
+                  propName in win ||
+                  webWorkerCtx.$config$.mainWindowAccessors?.includes(propName) ||
+                  false
+                );
+              }
+            },
           }) as any,
           $document$: $createNode$(NodeName.Document, $winId$ + '.' + WinDocId.document) as any,
           $documentElement$: $createNode$(

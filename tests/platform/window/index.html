@@ -142,6 +142,18 @@
       </li>
 
       <li>
+        <strong>'notfound' in frames</strong>
+        <code id="testHasInFramesNotFound"></code>
+        <script type="text/partytown">
+          (function () {
+            const result = 'notfound' in window.frames;
+            const elm = document.getElementById('testHasInFramesNotFound');
+            elm.textContent = String(result);
+          })();
+        </script>
+      </li>
+
+      <li>
         <strong>frame by name, not found</strong>
         <code id="testGetFrameByNameNotFound"></code>
         <script type="text/partytown">

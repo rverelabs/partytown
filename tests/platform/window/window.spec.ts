@@ -26,6 +26,9 @@ test('window', async ({ page }) => {
   const testFramesIndexNotFound = page.locator('#testFramesIndexNotFound');
   await expect(testFramesIndexNotFound).toHaveText('undefined');
 
+  const testHasInFramesNotFound = page.locator('#testHasInFramesNotFound');
+  await expect(testHasInFramesNotFound).toHaveText('false');
+
   const testGetFrameByNameNotFound = page.locator('#testGetFrameByNameNotFound');
   await expect(testGetFrameByNameNotFound).toHaveText('null');
 
